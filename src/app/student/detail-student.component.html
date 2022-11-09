@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row mt-5" *ngIf="student">
+        <div class="col-md-4 mx-auto">
+            <div class="card" style="width: 18rem;">
+                <div class="card-header text-center">
+                    Detalle
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><b>ID: </b>{{student.id}}</li>
+                    <li class="list-group-item"><b>Nombres: </b>{{student.first_name}}</li>
+                    <li class="list-group-item"><b>Apellidos: </b>{{student.last_name}}</li>
+                    <li class="list-group-item"><b>Email: </b>{{student.email}}</li>
+                    <li class="list-group-item"><b>Teléfono: </b>{{student.phone}}</li>
+                    <li class="list-group-item"><b>Curso: </b>{{student.grade}}</li>
+                    <li class="list-group-item"><b>Materia: </b>{{student.course}}</li>
+                    <li class="list-group-item"><b>Calificación: </b>{{student.score}}</li>
+                </ul>
+                <div class="card-footer">
+                    <button class="btn btn-outline-primary btn-block" (click)="volver()"><i
+                            class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

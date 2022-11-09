@@ -4,12 +4,31 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
+//external
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { StudentListComponent } from './student/student-list.component';
+import { NewStudentComponent } from './student/new-student.component';
+import { EditStudentComponent } from './student/edit-student.component';
+import { DetailStudentComponent } from './student/detail-student.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    StudentListComponent,
+    NewStudentComponent,
+    EditStudentComponent,
+    DetailStudentComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     AppRoutingModule
   ],
   providers: [],
