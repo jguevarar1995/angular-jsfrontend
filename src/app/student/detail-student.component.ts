@@ -39,7 +39,7 @@ export class DetailStudentComponent implements OnInit {
   }
 
   volver(): void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/students']);
   }
 
 }

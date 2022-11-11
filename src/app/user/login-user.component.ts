@@ -1,34 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Student } from '../models/student';
-import { StudentService } from '../services/student.service';
+import { User } from '../models/user';
+import { UserService } from '../services/user.service';
 
 @Component({
-  selector: 'app-new-student',
-  templateUrl: './new-student.component.html',
-  styleUrls: ['./new-student.component.css']
+  selector: 'app-login-user',
+  templateUrl: './login-user.component.html',
+  styleUrls: ['./login-user.component.css']
 })
-export class NewStudentComponent implements OnInit {
+export class LoginUserComponent implements OnInit {
 
-  student: Student = <Student>{};
+  user: User = <User>{};
 
   constructor(
-    private studentService: StudentService,
+    private userService: UserService,
     private toastr: ToastrService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
+
   }
 
-  onCreate(): void {
-    this.studentService.save(this.student).subscribe({
+  performLogin(): void {
+    this.userService.login(this.user).subscribe({
       next: data => {
         this.toastr.success(data.message, 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'
         });
-        this.volver();
+        this.router.navigate(['/students']);
       },
       error: err => {
         this.toastr.error(err.error.message, 'Fail', {
@@ -40,10 +41,6 @@ export class NewStudentComponent implements OnInit {
       }
 
     });
-  }
-
-  volver(): void {
-    this.router.navigate(['/students']);
   }
 
 }

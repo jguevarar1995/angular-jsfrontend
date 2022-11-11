@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  studentURL: 'http://localhost:3000/student/'
+  studentURL: 'http://localhost:3000/student/',
+  userURL: 'http://localhost:3000/user/'
 };
 
 /*
