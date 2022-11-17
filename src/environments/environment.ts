@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  studentURL: 'http://localhost:3000/student/',
-  userURL: 'http://localhost:3000/user/'
+  studentURL: 'http://localhost:3000/api/v1/student/',
+  userURL: 'http://localhost:3000/api/v1/login/'
 };
 
 /*
